@@ -35,7 +35,7 @@
         "CUSTOM_NAME={ServiceName}",
         "WEBUI_URL=https://{Hostnames.{StaticServiceName}.{StaticServiceName}.host}",
         "WEBUI_NAME={ServiceName}",
-        "WEBUI_BANNERS="[{\"id\": \"1\", \"type\": \"info\", \"title\": \"Willkommen\", \"content\": \"Willkommen in deiner Privaten OpenWebui Umgebung\", \"dismissible\": true, \"timestamp\": 1000}]",
+        "WEBUI_BANNERS=[{\"id\": \"1\", \"type\": \"info\", \"title\": \"Willkommen\", \"content\": \"Willkommen in deiner Privaten OpenWebui Umgebung\", \"dismissible\": true, \"timestamp\": 1000}]",
         "WEBUI_SECRET_KEY=",
         "SCARF_NO_ANALYTICS=true",
         "DO_NOT_TRACK=true",
