@@ -91,7 +91,7 @@
             "Enabled": true
           }
         }
-      ]
+      ],
     "restart": "unless-stopped",
     "command": "bash start.sh",
       "runtime": "runc",
