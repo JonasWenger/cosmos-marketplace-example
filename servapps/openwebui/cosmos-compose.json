@@ -50,7 +50,6 @@
         "HF_HOME=/app/backend/data/cache/embedding/models",
         "HOME=/root",
         "DOCKER=true",
-        "ENABLE_SIGNUP=false",
         "MICROSOFT_CLIENT_ID=",
         "MICROSOFT_CLIENT_SECRET=",
         "MICROSOFT_CLIENT_TENANT_ID=",
