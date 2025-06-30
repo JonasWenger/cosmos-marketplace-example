@@ -16,8 +16,8 @@
       "container_name": "{ServiceName}",
       "restart": "unless-stopped",
       "environment": [
-      "OLLAMA_BASE_URL=",
-      "OPENAI_API_KEY=",
+        "OLLAMA_BASE_URL=",
+        "OPENAI_API_KEY=",
         "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
         "LANG=C.UTF-8",
         "GPG_KEY=A035C8C19219BA821ECEA86B64E628F8D684696D",
