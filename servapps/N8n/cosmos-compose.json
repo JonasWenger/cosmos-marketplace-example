@@ -4,7 +4,7 @@
       {
         "name": "templatePath",
         "label": "Where are youre Templates (leave empty to not mount anything)",
-        "initialValue": "{DefaultDataPath}/n8n-templates",
+        "initialValue": "/var/lib/docker/volumes/n8n-custom-nodes/_data",
         "type": "text"
       }
      ]
@@ -25,7 +25,7 @@
         "GENERIC_TIMEZONE=Europe/Berlin",
         "NODE_ENV=production",
         "N8N_RELEASE_TYPE=stable",
-        "WEBHOOK_URL={Hostnames.{StaticServiceName}.{StaticServiceName}.host}"
+        "WEBHOOK_URL=https://{Hostnames.{StaticServiceName}.{StaticServiceName}.host}"
       ],
       "labels": {
         "cosmos-persistent-env": "DB_POSTGRESDB_PORT, DB_POSTGRESDB_PORT, DB_POSTGRESDB_DATABASE, DB_POSTGRESDB_USER, DB_POSTGRESDB_PASSWORD",
