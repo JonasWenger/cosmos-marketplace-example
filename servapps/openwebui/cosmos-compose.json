@@ -3,7 +3,7 @@
     "form": [
       {
         "name": "OpenAIKey",
-        "label": "OpenAI API Key (leave empty if you not using it OpenAI)",
+        "label": "OpenAI API Key (leave empty if you not using OpenAI)",
         "initialValue": "",
         "type": "text"
       }
