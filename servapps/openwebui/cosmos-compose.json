@@ -55,7 +55,7 @@
       "labels": {
         "cosmos-auto-update": "true",
         "cosmos-force-network-mode": "{ServiceName}-openwebui_network",
-        "cosmos-icon": " https://jonaswenger.github.io/relyon-cosmos-store/servapps/openwebui/icon.png",
+        "cosmos-icon": "https://jonaswenger.github.io/relyon-cosmos-store/servapps/openwebui/icon.png",
         "org.opencontainers.image.created": "2024-11-29T21:24:58.270Z",
         "org.opencontainers.image.description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
         "org.opencontainers.image.licenses": "MIT",
@@ -82,15 +82,14 @@
           "useHost": true,
           "target": "http://{ServiceName}:8080",
           "mode": "SERVAPP",
-          "Timeout": 14400000,
-          "ThrottlePerMinute": 12000,
+          "timeout": 14400000,
+          "throttlePerMinute": 12000,
           "BlockCommonBots": true,
           "SmartShield": {
             "Enabled": true
           }
         }
       ],
-      "restart": "unless-stopped",
       "command": "bash start.sh",
       "runtime": "runc",
       "working_dir": "/app/backend",
@@ -103,10 +102,12 @@
           "curl --silent --fail http://localhost:${PORT:-8080}/health | jq -ne 'input.status == true' || exit 1"
         ]
       }
-    },
+    }
+  },
   "volumes": {
-    "OpenWebui-openwebui_storage": {},
+    "{ServiceName}-openwebui_storage": {}
+  },
   "networks": {
-    "{ServiceName}-openwebui_network":}
+    "{ServiceName}-openwebui_network": {}
   }
 }
