@@ -1,1 +1,110 @@
-
+{
+  "cosmos-installer": {
+     "form": [
+      {
+        "name": "OpenAIKey",
+        "label": "OpenAI API Key (leave empty if you not using it OpenAI)",
+        "initialValue": "",
+        "type": "text"
+      }
+     ]
+  },
+  "minVersion": "0.9.0",
+  "services": {
+    "{ServiceName}": {
+      "image": "ghcr.io/open-webui/open-webui:main",
+      "container_name": "{ServiceName}",
+      "restart": "unless-stopped",
+      "environment": [
+        "OLLAMA_BASE_URL=",
+        "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+        "LANG=C.UTF-8",
+        "GPG_KEY=A035C8C19219BA821ECEA86B64E628F8D684696D",
+        "PYTHON_VERSION=3.11.10",
+        "PYTHON_SHA256=07a4356e912900e61a15cb0949a06c4a05012e213ecd6b4e84d0f67aabbee372",
+        "ENV=prod",
+        "PORT=8080",
+        "USE_OLLAMA_DOCKER=false",
+        "USE_CUDA_DOCKER=false",
+        "USE_CUDA_DOCKER_VER=cu121",
+        "USE_EMBEDDING_MODEL_DOCKER=sentence-transformers/all-MiniLM-L6-v2",
+        "USE_RERANKING_MODEL_DOCKER=",
+        "OPENAI_API_BASE_URL=https://{Hostnames.{StaticServiceName}.{StaticServiceName}.host}",
+        "WEBUI_SECRET_KEY=",
+        "SCARF_NO_ANALYTICS=true",
+        "DO_NOT_TRACK=true",
+        "ANONYMIZED_TELEMETRY=false",
+        "WHISPER_MODEL=base",
+        "WHISPER_MODEL_DIR=/app/backend/data/cache/whisper/models",
+        "RAG_EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2",
+        "RAG_RERANKING_MODEL=",
+        "SENTENCE_TRANSFORMERS_HOME=/app/backend/data/cache/embedding/models",
+        "TIKTOKEN_ENCODING_NAME=cl100k_base",
+        "TIKTOKEN_CACHE_DIR=/app/backend/data/cache/tiktoken",
+        "HF_HOME=/app/backend/data/cache/embedding/models",
+        "HOME=/root",
+        "WEBUI_BUILD_VERSION=33e54a9d3beaacd79484597ed57bcb844aa27f7e",
+        "DOCKER=true",
+        "MICROSOFT_CLIENT_ID=",
+        "MICROSOFT_CLIENT_SECRET=",
+        "MICROSOFT_CLIENT_TENANT_ID=",
+        "ENABLE_OAUTH_SIGNUP=true",
+        "OAUTH_MERGE_ACCOUNTS_BY_EMAIL=true"
+        {if Context.OpenAIKey}
+        , "OPENAI_API_KEY={Context.OpenAIKey}"
+        {/if}
+      ],
+      "labels": {
+        "cosmos-auto-update": "true",
+        "cosmos-force-network-mode": "{ServiceName}-openwebui_network",
+        "cosmos-icon": " https://jonaswenger.github.io/relyon-cosmos-store/servapps/openwebui/icon.png",
+        "org.opencontainers.image.created": "2024-11-29T21:24:58.270Z",
+        "org.opencontainers.image.description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
+        "org.opencontainers.image.licenses": "MIT",
+        "org.opencontainers.image.revision": "33e54a9d3beaacd79484597ed57bcb844aa27f7e",
+        "org.opencontainers.image.source": "https://github.com/open-webui/open-webui",
+        "org.opencontainers.image.title": "open-webui",
+        "org.opencontainers.image.url": "https://github.com/open-webui/open-webui",
+        "org.opencontainers.image.version": "dev"
+      },
+      "networks": {
+        "{ServiceName}-openwebui_network": {}
+      },
+      "volumes": [
+        {
+          "source": "{ServiceName}-openwebui_storage",
+          "target": "/app/backend/data",
+          "type": "volume"
+        }
+    ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    "restart": "unless-stopped",
+    "command": "bash start.sh",
+      "runtime": "runc",
+      "working_dir": "/app/backend",
+      "user": "0:0",
+      "hostname": "{ServiceName}",
+      "network_mode": "{ServiceName}-openwebui_network",
+      "healthcheck": {
+        "test": [
+          "CMD-SHELL",
+          "curl --silent --fail http://localhost:${PORT:-8080}/health | jq -ne 'input.status == true' || exit 1"
+        ],
+      }
+    }
+  }
+}
