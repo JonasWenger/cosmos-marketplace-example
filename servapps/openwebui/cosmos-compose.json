@@ -1,13 +1,13 @@
 {
   "cosmos-installer": {
-     "form": [
+    "form": [
       {
         "name": "OpenAIKey",
         "label": "OpenAI API Key (leave empty if you not using it OpenAI)",
         "initialValue": "",
         "type": "text"
       }
-     ]
+    ]
   },
   "minVersion": "0.9.0",
   "services": {
@@ -48,8 +48,7 @@
         "MICROSOFT_CLIENT_ID=",
         "MICROSOFT_CLIENT_SECRET=",
         "MICROSOFT_CLIENT_TENANT_ID=",
-        "ENABLE_OAUTH_SIGNUP=true",
-        "OAUTH_MERGE_ACCOUNTS_BY_EMAIL=true"
+        "ENABLE_OAUTH_SIGNUP=true"
         {if Context.OpenAIKey}
         , "OPENAI_API_KEY={Context.OpenAIKey}"
         {/if}
@@ -76,7 +75,7 @@
           "target": "/app/backend/data",
           "type": "volume"
         }
-    ],
+      ],
       "routes": [
         {
           "name": "{ServiceName}",
@@ -92,8 +91,8 @@
           }
         }
       ],
-    "restart": "unless-stopped",
-    "command": "bash start.sh",
+      "restart": "unless-stopped",
+      "command": "bash start.sh",
       "runtime": "runc",
       "working_dir": "/app/backend",
       "user": "0:0",
@@ -103,6 +102,8 @@
         "test": [
           "CMD-SHELL",
           "curl --silent --fail http://localhost:${PORT:-8080}/health | jq -ne 'input.status == true' || exit 1"
-  ],
+        ]
+      }
+    }
   }
 }
