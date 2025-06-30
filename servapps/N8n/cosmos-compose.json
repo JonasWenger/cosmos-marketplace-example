@@ -1,5 +1,13 @@
 {
-  "cosmos-installer": {},
+  "cosmos-installer": {
+     "form": [
+      {
+        "name": "templatePath",
+        "label": "Where are youre Templates (leave empty to not mount anything)",
+        "initialValue": "{DefaultDataPath}/n8n-templates",
+        "type": "text"
+      }
+  },
   "minVersion": "0.9.0",
   "services": {
     "{ServiceName}": {
@@ -16,7 +24,7 @@
         "GENERIC_TIMEZONE=Europe/Berlin",
         "NODE_ENV=production",
         "N8N_RELEASE_TYPE=stable",
-        "WEBHOOK_URL=https://{ServiceName}.saas-001.relyon.de"
+        "WEBHOOK_URL={Hostnames.{StaticServiceName}.{StaticServiceName}.host}"
       ],
       "labels": {
         "cosmos-persistent-env": "DB_POSTGRESDB_PORT, DB_POSTGRESDB_PORT, DB_POSTGRESDB_DATABASE, DB_POSTGRESDB_USER, DB_POSTGRESDB_PASSWORD",
@@ -71,7 +79,14 @@
           "source": "{ServiceName}-postgres-data",
           "target": "/var/lib/postgresql/data",
           "type": "volume"
+        },
+        {if Context.templatePath}
+        , {
+          "source": "{Context.templatePath}",
+          "target": "/home/node/.n8n/custom",
+          "type": "bind"
         }
+        {/if}
       ],
       "labels": {
         "cosmos-persistent-env": "POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD",
