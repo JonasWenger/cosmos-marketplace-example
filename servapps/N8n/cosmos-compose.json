@@ -7,8 +7,8 @@
         "initialValue": "{DefaultDataPath}/n8n-templates",
         "type": "text"
       }
-  }
      ]
+  },
   "minVersion": "0.9.0",
   "services": {
     "{ServiceName}": {
