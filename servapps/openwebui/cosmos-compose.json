@@ -103,8 +103,6 @@
         "test": [
           "CMD-SHELL",
           "curl --silent --fail http://localhost:${PORT:-8080}/health | jq -ne 'input.status == true' || exit 1"
-        ],
-      }
-    }
+  ],
   }
 }
