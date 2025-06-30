@@ -16,7 +16,8 @@
       "container_name": "{ServiceName}",
       "restart": "unless-stopped",
       "environment": [
-        "OLLAMA_BASE_URL=",
+      "OLLAMA_BASE_URL"=""
+      "OPENAI_API_KEY"=""
         "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
         "LANG=C.UTF-8",
         "GPG_KEY=A035C8C19219BA821ECEA86B64E628F8D684696D",
@@ -43,7 +44,6 @@
         "TIKTOKEN_CACHE_DIR=/app/backend/data/cache/tiktoken",
         "HF_HOME=/app/backend/data/cache/embedding/models",
         "HOME=/root",
-        "WEBUI_BUILD_VERSION=33e54a9d3beaacd79484597ed57bcb844aa27f7e",
         "DOCKER=true",
         "MICROSOFT_CLIENT_ID=",
         "MICROSOFT_CLIENT_SECRET=",
