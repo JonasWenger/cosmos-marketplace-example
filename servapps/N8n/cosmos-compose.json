@@ -14,8 +14,6 @@
         "DB_POSTGRESDB_USER=n8n",
         "DB_POSTGRESDB_PASSWORD={Passwords.0}",
         "GENERIC_TIMEZONE=Europe/Berlin",
-        "NODE_ENV=production",
-        "N8N_RELEASE_TYPE=stable",
         "WEBHOOK_URL=https://{ServiceName}.saas-001.relyon.de"
       ],
       "labels": {
