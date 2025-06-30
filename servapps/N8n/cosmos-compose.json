@@ -44,6 +44,13 @@
           "target": "/home/node/.n8n",
           "type": "volume"
         }
+        {if Context.templatePath}
+        , {
+          "source": "{Context.templatePath}",
+          "target": "/home/node/.n8n/custom",
+          "type": "bind"
+        }
+        {/if}
     ],
       "routes": [
         {
@@ -80,14 +87,7 @@
           "source": "{ServiceName}-postgres-data",
           "target": "/var/lib/postgresql/data",
           "type": "volume"
-        },
-        {if Context.templatePath}
-        , {
-          "source": "{Context.templatePath}",
-          "target": "/home/node/.n8n/custom",
-          "type": "bind"
         }
-        {/if}
       ],
       "labels": {
         "cosmos-persistent-env": "POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD",
