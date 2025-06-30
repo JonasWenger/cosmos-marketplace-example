@@ -104,8 +104,9 @@
         ]
       }
     },
+  "volumes": {
+    "OpenWebui-openwebui_storage": {},
   "networks": {
-    "{ServiceName}-openwebui_network": {
-    }
+    "{ServiceName}-openwebui_network":}
   }
 }
