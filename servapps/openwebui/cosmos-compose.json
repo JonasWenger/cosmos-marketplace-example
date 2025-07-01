@@ -30,7 +30,6 @@
         "USE_EMBEDDING_MODEL_DOCKER=sentence-transformers/all-MiniLM-L6-v2",
         "USE_RERANKING_MODEL_DOCKER=",
         "OPENAI_API_BASE_URL=https://api.openai.com/v1",
-        "WEBHOOK_URL=https://{Hostnames.{StaticServiceName}.{StaticServiceName}.host}",
         "RESPONSE_WATERMARK={ServiceName}",
         "CUSTOM_NAME={ServiceName}",
         "WEBUI_URL=https://{Hostnames.{StaticServiceName}.{StaticServiceName}.host}",
