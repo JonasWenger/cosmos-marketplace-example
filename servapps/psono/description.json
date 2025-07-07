@@ -1,0 +1,9 @@
+ {
+    "name": "OpenWebui",
+    "longDescription": "<p>OpenWebUI ist eine vielseitige Open-Source-Plattform mit grafischer Benutzeroberfläche (GUI) für maschinelles Lernen und Deep Learning. Sie ermöglicht Nutzern, KI-Modelle einfach zu verwalten und innovative Lösungen zu entwickeln. Durch ihre Benutzerfreundlichkeit und Flexibilität eignet sich OpenWebUI für verschiedene Anwendungsbereiche wie Bildung, E-Learning und Unternehmensanwendungen. Zudem unterstützt sie die Integration mit anderen KI-Tools wie Ollama, was die Funktionalität zusätzlich erweitert. Der erste Start dauert ein Paar Minuten etwas gedult Bitte ;-)</p>",
+    "description": "OpenWebUI ist eine Open-Source-Benutzeroberfläche zur einfachen Nutzung von KI-Modellen.",
+    "tags": ["AI", "Chat", "self-hosted", "relyonAG"],
+    "repository": "https://github.com/open-webui/open-webui",
+    "image": "ghcr.io/open-webui/open-webui:main",
+    "supported_architectures": ["amd64", "arm64"]
+}
