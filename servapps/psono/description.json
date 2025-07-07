@@ -1,7 +1,7 @@
  {
     "name": "Psono",
     "longDescription": "<p>Psono ist ein webbasiertes Passwortmanagement-System, das es Nutzern ermöglicht, sensible Daten wie Passwörter, geheime Notizen, API-Schlüssel oder Kreditkartendaten sicher zu speichern, zu organisieren und zu teilen. Die Daten werden clientseitig mit modernen Verschlüsselungsverfahren geschützt – das bedeutet, dass nur der Benutzer Zugang zu seinen Daten hat ("Zero-Knowledge"-Prinzip).</p>",
-    "description": "Psono ist eine leistungsfähige, quelloffene Lösung für das sichere Speichern und Teilen von Passwörtern und anderen sensiblen Informationen — sowohl für Einzelpersonen als auch für Teams.",
+    "description": "Psono ist eine leistungsfähige, quelloffene Lösung für das sichere Speichern und Teilen von Passwörtern und anderen sensiblen Informationen — sowohl für Einzelpersonen als auch für Teams",
     "tags": ["Password", "Secure", "self-hosted", "relyonAG"],
     "repository": "https://gitlab.com/esaqa/psono",
     "image": "psono/psono-combo:latest",
