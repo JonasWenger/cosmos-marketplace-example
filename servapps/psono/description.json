@@ -1,9 +1,9 @@
  {
-    "name": "OpenWebui",
-    "longDescription": "<p>OpenWebUI ist eine vielseitige Open-Source-Plattform mit grafischer Benutzeroberfläche (GUI) für maschinelles Lernen und Deep Learning. Sie ermöglicht Nutzern, KI-Modelle einfach zu verwalten und innovative Lösungen zu entwickeln. Durch ihre Benutzerfreundlichkeit und Flexibilität eignet sich OpenWebUI für verschiedene Anwendungsbereiche wie Bildung, E-Learning und Unternehmensanwendungen. Zudem unterstützt sie die Integration mit anderen KI-Tools wie Ollama, was die Funktionalität zusätzlich erweitert. Der erste Start dauert ein Paar Minuten etwas gedult Bitte ;-)</p>",
-    "description": "OpenWebUI ist eine Open-Source-Benutzeroberfläche zur einfachen Nutzung von KI-Modellen.",
-    "tags": ["AI", "Chat", "self-hosted", "relyonAG"],
-    "repository": "https://github.com/open-webui/open-webui",
-    "image": "ghcr.io/open-webui/open-webui:main",
+    "name": "Psono",
+    "longDescription": "<p>Psono ist ein webbasiertes Passwortmanagement-System, das es Nutzern ermöglicht, sensible Daten wie Passwörter, geheime Notizen, API-Schlüssel oder Kreditkartendaten sicher zu speichern, zu organisieren und zu teilen. Die Daten werden clientseitig mit modernen Verschlüsselungsverfahren geschützt – das bedeutet, dass nur der Benutzer Zugang zu seinen Daten hat ("Zero-Knowledge"-Prinzip).</p>",
+    "description": "Psono ist eine leistungsfähige, quelloffene Lösung für das sichere Speichern und Teilen von Passwörtern und anderen sensiblen Informationen — sowohl für Einzelpersonen als auch für Teams.",
+    "tags": ["Password", "Secure", "self-hosted", "relyonAG"],
+    "repository": "https://gitlab.com/esaqa/psono",
+    "image": "psono/psono-combo:latest",
     "supported_architectures": ["amd64", "arm64"]
 }
